@@ -17,25 +17,25 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      -  uses: actions/setup-java@v1
-         with:
+      - uses: actions/setup-java@v1
+        with:
           distribution: 'temurin'
           java-version: '17'
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v1
 
-      - name: Make Gradle
-        uses: chmod +x ./gradlew
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
 
       - name: Execute Gradle command - assembleDebug
         run: ./gradlew assembleDebug
 
-      - name: upload artifact to Firebase App Distribution
+      - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
+          appId: ${{ secrets.FIREBASE_APP_ID }}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
           file: app/build/outputs/apk/debug/app-debug.apk
-          releaseNotes: ${{ inputs.release_notes}}
+          releaseNotes: ${{ inputs.release_notes }}
