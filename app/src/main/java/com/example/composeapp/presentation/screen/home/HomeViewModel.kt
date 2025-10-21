@@ -24,7 +24,7 @@ class HomeViewModel : ViewModel() {
 
     fun onHeartIconClick() {
         viewModelScope.launch {
-            _eventFlow.emit(HomeUiEvent.ShowToast)
+            _eventFlow.emit(HomeUiEvent.NavigateToTestUiScreen)
         }
     }
 
@@ -40,12 +40,19 @@ class HomeViewModel : ViewModel() {
         }
     }
 
+    fun onTapMeClick() {
+        viewModelScope.launch {
+            _eventFlow.emit(HomeUiEvent.NavigateToTestUiScreen)
+        }
+    }
+
     sealed class HomeUiEvent {
         object NavigateToJournalScreen : HomeUiEvent()
         object ShowToast : HomeUiEvent()
         object NavigateToGalleryScreen : HomeUiEvent()
         object NavigateToCountDownScreen : HomeUiEvent()
         object NavigateToLoveQuotesScreen : HomeUiEvent()
+        object NavigateToTestUiScreen: HomeUiEvent()
     }
 }
 

@@ -21,6 +21,7 @@ import com.example.composeapp.R
 import com.example.composeapp.presentation.components.buttons.CustomButton
 import com.example.composeapp.presentation.theme.ComposeAppTheme
 import com.example.composeapp.presentation.theme.HeartColor
+import com.example.composeapp.utils.Screen
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
@@ -50,6 +51,10 @@ fun HomeScreen(
 
                 is HomeViewModel.HomeUiEvent.NavigateToLoveQuotesScreen -> {
                     navController.navigate("loveQuotes")
+                }
+
+                is HomeViewModel.HomeUiEvent.NavigateToTestUiScreen -> {
+                    navController.navigate(Screen.Test.route)
                 }
             }
         }

@@ -65,6 +65,9 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation("androidx.compose.material:material-icons-extended")
     implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation ("androidx.compose.material:material:1.6.0")
+
+
 
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -94,4 +97,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //otpInput
+    implementation ("com.github.mukeshsolanki.android-otpview-pinview:otpview-compose:3.1.0")
+
 }

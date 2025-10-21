@@ -11,6 +11,7 @@ import com.example.composeapp.presentation.screen.gallery.GalleryScreen
 import com.example.composeapp.presentation.screen.home.HomeScreen
 import com.example.composeapp.presentation.screen.journal.JournalScreen
 import com.example.composeapp.presentation.screen.loveQuotes.LoveQuotesScreen
+import com.example.composeapp.presentation.screen.testUi.TestScreen
 import com.example.composeapp.utils.Screen
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -21,5 +22,6 @@ fun NavGraphBuilder.mainNavGraph(navController: NavController) {
         composable(Screen.Gallery.route) { GalleryScreen(navController) }
         composable(Screen.Countdown.route) { CountdownScreen(navController) }
         composable(Screen.LoveQuotes.route) { LoveQuotesScreen(navController) }
+        composable(Screen.Test.route) { TestScreen() }
     }
 }
